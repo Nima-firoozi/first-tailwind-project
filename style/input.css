@@ -216,10 +216,10 @@
             >a {
                 >div {
                     >span {
+
                         &:nth-of-type(1) {
                             left: 0;
                             opacity: 1;
-                            visibility: visible;
                         }
 
                         &:nth-of-type(2) {
