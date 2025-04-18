@@ -36,7 +36,6 @@
     --text-9xl--line-height: 1;
     --font-weight-bold: 700;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-    --animate-spin: spin 1s linear infinite;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-main: #1B2673;
@@ -252,6 +251,9 @@
   .left-\[50\%\] {
     left: 50%;
   }
+  .z-50 {
+    z-index: 50;
+  }
   .order-1 {
     order: 1;
   }
@@ -336,6 +338,9 @@
   .mt-\[30px\] {
     margin-top: 30px;
   }
+  .mt-\[147px\] {
+    margin-top: 147px;
+  }
   .mr-4 {
     margin-right: calc(var(--spacing) * 4);
   }
@@ -410,6 +415,9 @@
   }
   .h-\[80px\] {
     height: 80px;
+  }
+  .h-\[100\%\] {
+    height: 100%;
   }
   .h-\[100px\] {
     height: 100px;
@@ -603,9 +611,6 @@
   .gap-1\.5 {
     gap: calc(var(--spacing) * 1.5);
   }
-  .gap-2 {
-    gap: calc(var(--spacing) * 2);
-  }
   .gap-x-12 {
     column-gap: calc(var(--spacing) * 12);
   }
@@ -718,12 +723,6 @@
   }
   .p-\[10px\] {
     padding: 10px;
-  }
-  .px-1 {
-    padding-inline: calc(var(--spacing) * 1);
-  }
-  .px-1\.5 {
-    padding-inline: calc(var(--spacing) * 1.5);
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
@@ -984,11 +983,6 @@
   .\*\:mx-1 {
     :is(& > *) {
       margin-inline: calc(var(--spacing) * 1);
-    }
-  }
-  .\*\:mx-2 {
-    :is(& > *) {
-      margin-inline: calc(var(--spacing) * 2);
     }
   }
   .\*\:mx-8 {
@@ -1697,6 +1691,11 @@
       width: 45%;
     }
   }
+  .md\:justify-start {
+    @media (width >= 48rem) {
+      justify-content: flex-start;
+    }
+  }
   .lg\:order-1 {
     @media (width >= 64rem) {
       order: 1;
@@ -1952,26 +1951,19 @@
       width: 30%;
     }
   }
+  .xl\:w-\[90\%\] {
+    @media (width >= 80rem) {
+      width: 90%;
+    }
+  }
   .xl\:px-48 {
     @media (width >= 80rem) {
       padding-inline: calc(var(--spacing) * 48);
     }
   }
-  .xl\:px-\[5\%\] {
-    @media (width >= 80rem) {
-      padding-inline: 5%;
-    }
-  }
   .xl\:px-\[60px\] {
     @media (width >= 80rem) {
       padding-inline: 60px;
-    }
-  }
-  .xl\:\*\:mx-3 {
-    @media (width >= 80rem) {
-      :is(& > *) {
-        margin-inline: calc(var(--spacing) * 3);
-      }
     }
   }
   .\32 xl\:container {
@@ -2192,7 +2184,6 @@
             &:nth-of-type(1) {
               left: 0;
               opacity: 1;
-              visibility: visible;
             }
             &:nth-of-type(2) {
               left: 52px;
@@ -2532,11 +2523,6 @@
   syntax: "*";
   inherits: false;
   initial-value: 1;
-}
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
